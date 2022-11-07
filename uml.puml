@@ -1,0 +1,86 @@
+@startuml
+
+package com.paulobarbosa.foxlibrary {
+
+abstract class ClassBase{
+- id: int
+}
+
+abstract class Person{
+- name: string
+- info: string
+}
+
+
+ class Archive{
+}
+
+ class Publisher{
+}
+
+ class Category{
+}
+
+ class Language{
+}
+
+enum Type <<enumeration>>{
+}
+
+ class Book {
+ - title: string
+ - isbn: string
+ - page_number: int
+ - description: string
+ - size_mb: float
+ - publisher_id: int
+ - language_id: int
+ - picture_id: int
+ + void: register()
+}
+
+class RelBookType{
+- book_id: int
+- type_id: int
+}
+
+class RelBookAuthor{
+- book_id: int
+- author_id: int
+}
+
+class RelBookCategory{
+- book_id: int
+- category_id: int
+}
+
+
+ClassBase <|-- Person
+'ClassBase <|-- Archive
+'ClassBase <|-- Publisher
+'ClassBase <|-- Category
+'ClassBase <|-- Language
+
+Person <|-- Author : "< inherits "
+
+
+Book  *--> " 1..1  " Language : " has >"
+Book  o--> " 0..1  " Publisher : " has >"
+Book  o--> " 0..1  " Archive : " has >"
+
+RelBookType -down-> "1..*   " Book : " contains >"
+RelBookType -down-> "1..*   " Type : " contains >"
+
+RelBookAuthor -down-> "1..* " Book : " contains >"
+RelBookAuthor -down-> "1..*   " Author : " contains >"
+
+RelBookCategory -down-> "1..*   " Book : " contains >"
+RelBookCategory -down-> "1..*   " Category : " contains >"
+
+
+
+}
+
+
+
+@enduml
