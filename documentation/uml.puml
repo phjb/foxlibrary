@@ -1,8 +1,8 @@
 @startuml
 
-package com.paulobarbosa.foxlibrary {
+package com.paulobarbosa.foxlibrary.book {
 
-abstract class ClassBase{
+abstract class EntityBase{
 - id: int
 }
 
@@ -55,11 +55,11 @@ class RelBookCategory{
 }
 
 
-ClassBase <|-- Person
-'ClassBase <|-- Archive
-'ClassBase <|-- Publisher
-'ClassBase <|-- Category
-'ClassBase <|-- Language
+EntityBase <|-- Person
+'EntityBase <|-- Archive
+'EntityBase <|-- Publisher
+'EntityBase <|-- Category
+'EntityBase <|-- Language
 
 Person <|-- Author : "< inherits "
 

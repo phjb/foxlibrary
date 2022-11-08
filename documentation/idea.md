@@ -12,6 +12,7 @@ This is a really cool project for a digital library!
     * [Audios](#-audios)
     * [Videos](#-videos)
     * [Photos](#-photos)
+* [Class Diagram](#class-diagram)
 
 ## Some ideas 💡
 
@@ -81,7 +82,7 @@ ___
 ```puml
 @startuml
 
-package com.paulobarbosa.foxlibrary {
+package com.paulobarbosa.foxlibrary.book {
 
 abstract class ClassBase{
 - id: int
