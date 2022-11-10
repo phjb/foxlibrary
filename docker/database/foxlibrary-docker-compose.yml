@@ -6,7 +6,7 @@ services:
     container_name: fox_library_db
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_DATABASE: 'PRODUTOBD'
+      MYSQL_DATABASE: 'foxlibrary_db'
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: 'foxlibrary'
       MYSQL_PASSWORD: 'F0xL1br2ry'
