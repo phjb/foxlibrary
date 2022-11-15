@@ -1,17 +1,14 @@
-package com.paulobarbosa.foxlibrary.model;
+package com.paulobarbosa.foxlibrary.global.entity;
 
 import com.paulobarbosa.foxlibrary.core.util.Constants;
-import com.paulobarbosa.foxlibrary.core.util.Schema;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
-import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-@Table(schema = Schema.SCHEMA_FOXLIBRARY_DB, name = "archive")
-public class Archive extends EntityBase {
+public abstract class Archive extends EntityBase {
 
     @NotEmpty(message = Constants.REQUIRED_FILED)
     @Size(max = 30)

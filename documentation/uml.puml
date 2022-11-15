@@ -22,6 +22,10 @@ class Idiom{
 enum Format <<enumeration>>{
 }
 
+class Category{
+}
+
+
 }
 
 package com.paulobarbosa.foxlibrary.book {
@@ -32,8 +36,6 @@ package com.paulobarbosa.foxlibrary.book {
  class Publisher{
 }
 
- class Category{
-}
 
 
 

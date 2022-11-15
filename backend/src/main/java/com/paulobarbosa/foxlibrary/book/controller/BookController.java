@@ -1,4 +1,4 @@
-package com.paulobarbosa.foxlibrary.controller;
+package com.paulobarbosa.foxlibrary.book.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 
     @GetMapping
-    private String index() {
+    public String index() {
         return "Hello Word v2!!!";
     }
 }
