@@ -1,7 +1,6 @@
 @startuml
 
-package com.paulobarbosa.foxlibrary.book {
-
+package com.paulobarbosa.foxlibrary.core {
 abstract class EntityBase{
 - id: int
 }
@@ -11,9 +10,24 @@ abstract class Person{
 - info: string
 }
 
+abstract class Company{
+}
+
+class Idiom{
+}
 
  class Archive{
 }
+
+enum Format <<enumeration>>{
+}
+
+}
+
+package com.paulobarbosa.foxlibrary.book {
+
+
+
 
  class Publisher{
 }
@@ -21,11 +35,7 @@ abstract class Person{
  class Category{
 }
 
- class Language{
-}
 
-enum Type <<enumeration>>{
-}
 
  class Book {
  - title: string
@@ -39,9 +49,9 @@ enum Type <<enumeration>>{
  + void: register()
 }
 
-class RelBookType{
+class RelBookFormat{
 - book_id: int
-- type_id: int
+- format_id: int
 }
 
 class RelBookAuthor{
@@ -56,20 +66,21 @@ class RelBookCategory{
 
 
 EntityBase <|-- Person
+EntityBase <|-- Company
+Company <|-- Publisher
 'EntityBase <|-- Archive
-'EntityBase <|-- Publisher
 'EntityBase <|-- Category
-'EntityBase <|-- Language
+'EntityBase <|-- Idiom
 
 Person <|-- Author : "< inherits "
 
 
-Book  *--> " 1..1  " Language : " has >"
+Book  *--> " 1..1  " Idiom : " has >"
 Book  o--> " 0..1  " Publisher : " has >"
 Book  o--> " 0..1  " Archive : " has >"
 
-RelBookType -down-> "1..*   " Book : " contains >"
-RelBookType -down-> "1..*   " Type : " contains >"
+RelBookFormat -down-> "1..*   " Book : " contains >"
+RelBookFormat -down-> "1..*   " Format : " contains >"
 
 RelBookAuthor -down-> "1..* " Book : " contains >"
 RelBookAuthor -down-> "1..*   " Author : " contains >"
