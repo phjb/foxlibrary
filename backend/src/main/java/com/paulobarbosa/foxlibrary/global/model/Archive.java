@@ -1,13 +1,17 @@
-package com.paulobarbosa.foxlibrary.global.entity;
+package com.paulobarbosa.foxlibrary.global.model;
 
 import com.paulobarbosa.foxlibrary.core.util.Constants;
+import lombok.Data;
+import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
+@Data
 public abstract class Archive extends EntityBase {
 
     @NotEmpty(message = Constants.REQUIRED_FILED)
@@ -30,4 +34,17 @@ public abstract class Archive extends EntityBase {
     @CreationTimestamp
     @Column(name = "create_at")
     private LocalDateTime createdAt;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Archive archive = (Archive) o;
+        return getId() != null && Objects.equals(getId(), archive.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
