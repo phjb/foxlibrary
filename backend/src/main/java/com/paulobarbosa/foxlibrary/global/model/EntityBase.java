@@ -5,15 +5,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import static com.paulobarbosa.foxlibrary.core.util.Schema.SCHEMA_FOXLIBRARY_DB;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(schema = SCHEMA_FOXLIBRARY_DB)
 public abstract class EntityBase {
     @Id
     @EqualsAndHashCode.Include
