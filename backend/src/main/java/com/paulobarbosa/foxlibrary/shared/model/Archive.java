@@ -1,4 +1,4 @@
-package com.paulobarbosa.foxlibrary.global.model;
+package com.paulobarbosa.foxlibrary.shared.model;
 
 import com.paulobarbosa.foxlibrary.core.util.Constants;
 import lombok.Data;

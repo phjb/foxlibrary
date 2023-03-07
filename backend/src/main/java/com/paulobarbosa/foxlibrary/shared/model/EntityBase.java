@@ -1,4 +1,4 @@
-package com.paulobarbosa.foxlibrary.global.model;
+package com.paulobarbosa.foxlibrary.shared.model;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

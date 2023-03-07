@@ -1,25 +1,13 @@
-package com.paulobarbosa.foxlibrary.global.model;
+package com.paulobarbosa.foxlibrary.shared.model;
 
-import com.paulobarbosa.foxlibrary.core.util.Constants;
 import lombok.Data;
 import org.hibernate.Hibernate;
-
 import javax.persistence.Column;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Data
-public abstract class Company extends EntityBase {
-    @NotEmpty(message = Constants.REQUIRED_FILED)
-    @Size(max = 50)
-    @Column(name = "name", length = 50, nullable = false)
-    private String name;
-
-    @Size(max = 500)
-    @Column(name = "information", length = 500)
-    private String information;
-
+public abstract class Company extends Person {
     @Size(max = 100)
     @Column(name = "address", length = 100)
     private String address;

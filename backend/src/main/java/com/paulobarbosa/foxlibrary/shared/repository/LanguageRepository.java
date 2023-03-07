@@ -1,6 +1,6 @@
-package com.paulobarbosa.foxlibrary.global.repository;
+package com.paulobarbosa.foxlibrary.shared.repository;
 
-import com.paulobarbosa.foxlibrary.global.model.Language;
+import com.paulobarbosa.foxlibrary.shared.model.Language;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

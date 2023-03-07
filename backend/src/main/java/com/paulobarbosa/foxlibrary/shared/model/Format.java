@@ -1,5 +1,4 @@
-package com.paulobarbosa.foxlibrary.global.model;
-
+package com.paulobarbosa.foxlibrary.shared.model;
 
 import com.paulobarbosa.foxlibrary.core.util.Constants;
 import lombok.*;
@@ -18,27 +17,18 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Category extends EntityBase {
-
+public class Format extends EntityBase {
     @NotEmpty(message = Constants.REQUIRED_FILED)
-    @Size(max = 20)
-    @Column(name = "name", length = 20, nullable = false)
+    @Size(max = 8)
+    @Column(name = "name", length = 8, nullable = false)
     private String name;
-
-    @NotEmpty(message = Constants.REQUIRED_FILED)
-    @Size(max = 50)
-    @Column(name = "description", length = 50, nullable = false)
-    private String description;
-
-    @Column(columnDefinition = "boolean default true")
-    private Boolean active;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Category category = (Category) o;
-        return getId() != null && Objects.equals(getId(), category.getId());
+        Format format = (Format) o;
+        return getId() != null && Objects.equals(getId(), format.getId());
     }
 
     @Override
