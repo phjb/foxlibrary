@@ -1,0 +1,36 @@
+spring:
+  config:
+    activate:
+      on-profile: "test"
+# ********* H2 ****************************************************
+#  datasource:
+#    url: jdbc:h2:mem:foxdb
+#    username: sa
+#    password:
+#    driverClassName: org.h2.Driver
+#  jpa:
+#    database: H2
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.H2Dialect
+#        ddl-auto: create
+#    show-sql: 'true'
+#  h2:
+#    console.enabled: true
+
+# ********* MYSQL *****************************************************
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:6033/testdb?useSSL=false
+    password: 'root'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    show-sql: 'true'
+    hibernate:
+      ddl-auto: create
+  
+  
+  flyway:
+    enabled: false

@@ -1,12 +1,21 @@
 package com.paulobarbosa.foxlibrary.shared.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
+
 import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
+@MappedSuperclass
 public abstract class Company extends Person {
     @Size(max = 100)
     @Column(name = "address", length = 100)

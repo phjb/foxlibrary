@@ -1,17 +1,22 @@
 package com.paulobarbosa.foxlibrary.shared.model;
 
 import com.paulobarbosa.foxlibrary.core.util.Constants;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-@Data
+@Getter
+@Setter
+@ToString
+@RequiredArgsConstructor
+@MappedSuperclass
 public abstract class Archive extends EntityBase {
 
     @NotEmpty(message = Constants.REQUIRED_FILED)
