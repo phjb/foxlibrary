@@ -1,4 +1,4 @@
-CREATE TABLE image
+CREATE TABLE images
 (
     id            int PRIMARY KEY AUTO_INCREMENT,
     name_original varchar(30) NOT NULL,

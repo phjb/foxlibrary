@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -49,10 +50,8 @@ public class Book extends EntityBase {
     @JoinColumn(name = "language_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_language"))
     private Language language;
 
-    @ManyToOne
-    @JoinColumn(name = "image_id",  referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "fk_image"))
-    private Image image;
-
+     @OneToMany(mappedBy="book")
+     List<RelBookImage> images;
 
     @ManyToMany
     @JoinTable(
@@ -80,5 +79,15 @@ public class Book extends EntityBase {
     @ToString.Exclude
     private List<Category> categories;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Book book)) return false;
+        return Objects.equals(title, book.title) && Objects.equals(isbn, book.isbn) && Objects.equals(pageNumber, book.pageNumber) && Objects.equals(description, book.description) && Objects.equals(sizeMb, book.sizeMb) && Objects.equals(active, book.active) && Objects.equals(publisher, book.publisher) && Objects.equals(language, book.language) && Objects.equals(images, book.images) && Objects.equals(authors, book.authors) && Objects.equals(formats, book.formats) && Objects.equals(categories, book.categories);
+    }
 
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

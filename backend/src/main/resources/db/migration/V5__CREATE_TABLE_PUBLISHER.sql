@@ -1,4 +1,4 @@
-CREATE TABLE publisher
+CREATE TABLE publishers
 (
     id          int PRIMARY KEY AUTO_INCREMENT,
     name        varchar(50)  NOT NULL,

@@ -1,4 +1,4 @@
-CREATE TABLE book
+CREATE TABLE books
 (
     id           int PRIMARY KEY AUTO_INCREMENT,
     title        varchar(100) NOT NULL,
@@ -9,8 +9,6 @@ CREATE TABLE book
     active       boolean DEFAULT TRUE,
     publisher_id int,
     language_id  int,
-    image_id   int,
-    CONSTRAINT fk_publisher FOREIGN KEY (publisher_id) REFERENCES publisher (id),
-    CONSTRAINT fk_language FOREIGN KEY (language_id) REFERENCES language (id),
-    CONSTRAINT fk_image FOREIGN KEY (image_id) REFERENCES image (id)
+    CONSTRAINT fk_publisher FOREIGN KEY (publisher_id) REFERENCES publishers (id),
+    CONSTRAINT fk_language FOREIGN KEY (language_id) REFERENCES languages (id)
 )

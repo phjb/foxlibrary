@@ -1,5 +1,5 @@
-CREATE TABLE format
+CREATE TABLE formats
 (
-    id   int(4) PRIMARY KEY auto_increment,
+    id   int(4) PRIMARY KEY AUTO_INCREMENT,
     name varchar(8) NOT NULL
 );
